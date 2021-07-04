@@ -36,10 +36,13 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "loadItems", sender: self)
+//        context.delete(catArray[indexPath.row])
+//        saveItems()
+//        loadItem()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         let destinationVC = segue.destination as! TodoListTableViewController
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedCategory = catArray[indexPath.row]

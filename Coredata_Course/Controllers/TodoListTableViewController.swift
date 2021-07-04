@@ -27,6 +27,7 @@ class TodoListTableViewController: UITableViewController {
         super.viewDidLoad()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         self.loadItems()
+        
     }
 
     @IBAction func addItemPressed(_ sender: Any) {
@@ -34,6 +35,7 @@ class TodoListTableViewController: UITableViewController {
         var textfield = UITextField()
         let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            
             
             let newItem = Item(context: self.context)
             newItem.title = textfield.text
